@@ -1,7 +1,7 @@
 observer
 =======
 
-`observer` allows user to hook their python plugin easily.
+`observer` allows user to hook plugin on proxy easily.
 
 ### observer plugin template
 
@@ -18,7 +18,6 @@ class DebugInterceptor(RequestInterceptorPlugin, ResponseInterceptorPlugin):
     return data
     
 if __name__ == '__main__':
-  proxy = None
   proxy = AsyncMitmProxy()
   proxy.register_interceptor(DebugInterceptor)
   try:
